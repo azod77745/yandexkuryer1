@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -54,4 +54,437 @@
 
         .logo {
             font-size: 26px;
-           
+            font-weight: 900;
+            color: var(--ya-black);
+            position: relative;
+            z-index: 1;
+            letter-spacing: -0.5px;
+        }
+
+        /* Hero секция (только текст) */
+        .hero {
+            background: var(--ya-white);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .highlight {
+            background: var(--ya-yellow);
+            padding: 2px 12px;
+            display: inline-block;
+            border-radius: 8px;
+            box-shadow: 4px 4px 0 var(--ya-black);
+        }
+
+        .hero-text {
+            font-size: clamp(18px, 2.2vw, 22px);
+            max-width: 650px;
+            margin: 0 auto 30px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .scroll-hint {
+            font-size: 16px;
+            color: #666;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* Секция с фактами и плюсами (теперь идёт ПЕРЕД кнопкой) */
+        .benefits {
+            background: var(--ya-yellow);
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 50px,
+                rgba(26, 26, 26, 0.1) 50px,
+                rgba(26, 26, 26, 0.1) 54px
+            );
+            pointer-events: none;
+        }
+
+        .benefits-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefits-title {
+            text-align: center;
+            font-size: clamp(26px, 4vw, 40px);
+            font-weight: 900;
+            margin-bottom: 40px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .benefit-card {
+            background: var(--ya-white);
+            border: 3px solid var(--ya-black);
+            border-radius: 16px;
+            padding: 25px 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 6px 6px 0 var(--ya-black);
+        }
+
+        .benefit-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .benefit-card h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .benefit-card p {
+            font-size: 15px;
+            color: #444;
+            line-height: 1.4;
+        }
+
+        /* Секция с главной кнопкой регистрации */
+        .main-cta {
+            background: var(--ya-black);
+            color: var(--ya-white);
+            padding: 70px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 40px,
+                rgba(252, 224, 0, 0.08) 40px,
+                rgba(252, 224, 0, 0.08) 42px
+            );
+            pointer-events: none;
+        }
+
+        .main-cta h2 {
+            font-size: clamp(26px, 4vw, 42px);
+            font-weight: 900;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .main-cta p {
+            font-size: 18px;
+            margin-bottom: 35px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--ya-yellow);
+            color: var(--ya-black);
+            padding: 24px 50px;
+            font-size: 22px;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 8px 0 #c4b000, 0 12px 30px rgba(0,0,0,0.3);
+            border: 3px solid var(--ya-yellow);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 15px,
+                rgba(26, 26, 26, 0.1) 15px,
+                rgba(26, 26, 26, 0.1) 17px
+            );
+            pointer-events: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 11px 0 #c4b000, 0 15px 35px rgba(0,0,0,0.4);
+        }
+
+        .cta-button:active {
+            transform: translateY(4px);
+            box-shadow: 0 4px 0 #c4b000, 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Как начать */
+        .how-to {
+            background: var(--ya-white);
+            padding: 60px 20px;
+        }
+
+        .how-to-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .how-to-title {
+            text-align: center;
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 900;
+            margin-bottom: 40px;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 15px;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--ya-yellow);
+            border: 3px solid var(--ya-black);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 900;
+            margin: 0 auto 15px;
+            box-shadow: 4px 4px 0 var(--ya-black);
+        }
+
+        .step h3 {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            color: #555;
+            font-size: 15px;
+        }
+
+        /* Футер */
+        footer {
+            background: var(--ya-yellow);
+            padding: 25px 20px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--ya-black);
+            border-top: 3px solid var(--ya-black);
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 25px,
+                rgba(26, 26, 26, 0.06) 25px,
+                rgba(26, 26, 26, 0.06) 27px
+            );
+            pointer-events: none;
+        }
+
+        footer p {
+            position: relative;
+            z-index: 1;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .hero { padding: 40px 15px 30px; }
+            .benefits, .main-cta, .how-to { padding: 50px 15px; }
+            .cta-button { padding: 20px 30px; font-size: 18px; width: 100%; text-align: center; }
+            .header { padding: 15px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">Яндекс Еда · Курьерам</div>
+</header>
+
+<!-- Сначала текст и призыв узнать подробности -->
+<section class="hero">
+    <div class="hero-container">
+        <h1>
+            Хочешь получать<br>
+            <span class="highlight">от 3600 ₽ в день?</span>
+        </h1>
+        <p class="hero-text">
+            Тогда тебе в Яндекс Еду! Стань частью команды, получай бонусы и радуй людей. <br>
+            Узнай все плюсы работы ниже 👇
+        </p>
+        <div class="scroll-hint">Листай вниз, чтобы узнать подробности</div>
+    </div>
+</section>
+
+<!-- Теперь здесь ФАКТЫ и ПЛЮСЫ работы -->
+<section class="benefits">
+    <div class="benefits-container">
+        <h2 class="benefits-title">Почему стоит работать с нами 💛</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3>Высокий доход</h3>
+                <p>От 3600 ₽ в день. Все чаевые от клиентов остаются тебе на 100%.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">📅</div>
+                <h3>Свободный график</h3>
+                <p>Работай от 1 часа в день. Совмещай с учёбой, основной работой или хобби.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">⚡</div>
+                <h3>Выплаты каждый день</h3>
+                <p>Выводи заработанные деньги на любую банковскую карту ежедневно.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🎁</div>
+                <h3>Бонусы новичкам</h3>
+                <p>Специальные акции и повышенные коэффициенты для новых курьеров.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">📍</div>
+                <h3>Район на выбор</h3>
+                <p>Работай рядом с домом или там, где тебе удобно. Не нужно далеко ехать.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🚀</div>
+                <h3>Быстрый старт</h3>
+                <p>Оформление за 10 минут онлайн. Опыт не нужен, всему научим!</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🎽</div>
+                <h3>Бесплатная экипировка</h3>
+                <p>Выдадим удобную форму и фирменную термосумку совершенно бесплатно.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">👥</div>
+                <h3>Поддержка 24/7</h3>
+                <p>Дружный чат курьеров и круглосуточная помощь от службы заботы.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- А теперь ГЛАВНАЯ КНОПКА РЕГИСТРАЦИИ с вашей ссылкой -->
+<section class="main-cta">
+    <h2>Готов начать зарабатывать?</h2>
+    <p>Регистрируйся через ссылку ниже, стань частью команды и получи бонусы!</p>
+    <a href="https://reg.eda.yandex.ru/?advertisement_campaign=forms_for_agents&user_invite_code=c2cd2fccf8b24c46a9c270fc3700d345&utm_content=blank" 
+       class="cta-button" 
+       target="_blank" 
+       rel="noopener noreferrer">
+        Зарегистрироваться и начать →
+    </a>
+</section>
+
+<!-- Как начать (для доверия) -->
+<section class="how-to">
+    <div class="how-to-container">
+        <h2 class="how-to-title">Как начать работать?</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Оставь заявку</h3>
+                <p>Нажми на кнопку выше и заполни короткую анкету</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Пройди обучение</h3>
+                <p>Короткий онлайн-инструктаж (займёт 15 минут)</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Забери экипировку</h3>
+                <p>Получи сумку и форму в ближайшем пункте выдачи</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Выходи на линию</h3>
+                <p>Бери первые заказы и получай деньги уже сегодня</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 · Стань частью команды Яндекс Еды уже сегодня 💛</p>
+</footer>
+
+</body>
+</html>          
