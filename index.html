@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа курьером в Яндекс Еде — от 3600 ₽ в день</title>
+    <style>
+        :root {
+            --ya-yellow: #FCE000;
+            --ya-black: #1A1A1A;
+            --ya-white: #FFFFFF;
+            --ya-gray: #F5F5F5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'YS Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: var(--ya-white);
+            color: var(--ya-black);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* Шапка с фирменными полосками */
+        .header {
+            background: var(--ya-yellow);
+            padding: 20px 40px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid var(--ya-black);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 30px,
+                rgba(26, 26, 26, 0.08) 30px,
+                rgba(26, 26, 26, 0.08) 32px
+            );
+            pointer-events: none;
+        }
+
+        .logo {
+            font-size: 26px;
+           
